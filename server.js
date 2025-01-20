@@ -1,18 +1,14 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const product = require('./model/schema');
+const connectdb = require('./Config/db');
+console.log(connectdb);
 
 
-mongoose.connect('mongodb://localhost:27017/')
-console.log('Connected to MongoDB');
-const productSchema = mongoose.Schema({
-  name: String,
-  category: String,
-  price: Number,
-  stock: Number
-});
 
-const product = mongoose.model('items', productSchema);
+
+
 
 app.use(express.json());
 
